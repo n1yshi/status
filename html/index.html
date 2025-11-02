@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Status</title>
+	<meta charset="utf-8">
+	<meta name="theme-color" content="#000">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="img/icon.png" rel="icon">
+	<link rel="stylesheet" type="text/css" href="css/colors.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/light.css">
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/parser.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<!-- Main screen -->
+	<div class="screen unloaded" id="main">
+		<div class="wrapper">
+			<div class="title-main"><div>Status</div></div>
+			
+			<div class="center titlebar">
+				<button onclick="goto('theme')">
+					<i>palette</i>
+					<p>Theme</p>
+				</button>
+			</div>
+			<div class="contents">
+				<div class="list">
+					<div class="item clickable" onclick="goto('netami-tv')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">Clips Website</div>
+							<div class="value" id="main-netami-tv">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+					<div class="item clickable" onclick="goto('netami-games')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">Netami Games</div>
+							<div class="value" id="main-netami-games">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+					<div class="item clickable" onclick="goto('mod')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">Mod</div>
+							<div class="value" id="main-mod">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+					<div class="item clickable" onclick="goto('vincent')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">Vincent Bot</div>
+							<div class="value" id="main-vincent">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+					<div class="item clickable" onclick="goto('netami-bot')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">NetamiTV Bot</div>
+							<div class="value" id="main-netami-bot">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+					<div class="item clickable" onclick="goto('twitch-bot')">
+						<i>language</i>
+						<div class="text">
+							<div class="name">Twitch Bot</div>
+							<div class="value" id="main-twitch-bot">N/A</div>
+						</div>
+						<i class="arrow"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Netami TV screen -->
+	<div class="screen hidden" id="netami-tv">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Clips Website</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="netami-tv-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Netami Games screen -->
+	<div class="screen hidden" id="netami-games">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Netami Games</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="netami-games-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mod screen -->
+	<div class="screen hidden" id="mod">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Mod</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="mod-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Vincent screen -->
+	<div class="screen hidden" id="vincent">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Vincent Bot</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="vincent-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Netami Bot screen -->
+	<div class="screen hidden" id="netami-bot">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">NetamiTV Bot</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="netami-bot-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Twitch Bot screen -->
+	<div class="screen hidden" id="twitch-bot">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Twitch Bot</div>
+			</div>
+			<div class="contents">
+				<div class="list" id="twitch-bot-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Theme window -->
+	<div class="screen hidden" id="theme">
+		<div class="wrapper">
+			<div class="header">
+				<i class="back"></i>
+				<div class="title">Theme</div>
+			</div>
+			<div class="contents">
+				<div class="center">
+					<div class="themes">
+						<div class="theme light selected" onclick="selectTheme(true)">
+							<div class="preview">
+								<div class="box">
+									<i>chevron_right</i>
+								</div>
+								<div class="box">
+									<i>chevron_right</i>
+								</div>
+							</div>
+						</div>
+						<div class="theme dark" onclick="selectTheme(false)">
+							<div class="preview">
+								<div class="box">
+									<i>chevron_right</i>
+								</div>
+								<div class="box">
+									<i>chevron_right</i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="accents">
+						<i class="red"></i>
+						<i class="orange"></i>
+						<i class="yellow"></i>
+						<i class="green"></i>
+						<i class="lightblue"></i>
+						<i class="blue"></i>
+						<i class="purple"></i>
+						<i class="pink"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

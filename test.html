@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Status Test</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="html/css/colors.css">
+	<link rel="stylesheet" type="text/css" href="html/css/main.css">
+	<link rel="stylesheet" type="text/css" href="html/css/light.css">
+	<script type="text/javascript" src="html/js/utils.js"></script>
+	<script type="text/javascript" src="html/js/parser.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="contents">
+			<div class="list">
+				<div class="item">
+					<i>language</i>
+					<div class="text">
+						<div class="name">Netami TV</div>
+						<div class="value" id="main-netami-tv">N/A</div>
+					</div>
+					<i class="arrow"></i>
+				</div>
+				<div class="item">
+					<i>language</i>
+					<div class="text">
+						<div class="name">Netami Games</div>
+						<div class="value" id="main-netami-games">N/A</div>
+					</div>
+					<i class="arrow"></i>
+				</div>
+				<div class="item">
+					<i>language</i>
+					<div class="text">
+						<div class="name">Mod</div>
+						<div class="value" id="main-mod">N/A</div>
+					</div>
+					<i class="arrow"></i>
+				</div>
+				<div class="item">
+					<i>language</i>
+					<div class="text">
+						<div class="name">Vincent</div>
+						<div class="value" id="main-vincent">N/A</div>
+					</div>
+					<i class="arrow"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Test data from the API
+		const testData = {
+			"netami-tv": {
+				"sites": [{"url": "https://netamitv.wispbyte.org/", "status": "online", "response_time": 0.47519731521606445, "last_checked": 1762091201.8380272}], 
+				"online_count": 1, 
+				"total": 1
+			}, 
+			"netami-games": {
+				"sites": [{"url": "https://netamigames.wispbyte.org/", "status": "offline", "response_time": 0.3480954170227051, "last_checked": 1762091202.1867816}], 
+				"online_count": 0, 
+				"total": 1
+			}, 
+			"mod": {
+				"sites": [{"url": "https://mod.wispbyte.org/", "status": "online", "response_time": 0.3804793357849121, "last_checked": 1762091202.5675855}], 
+				"online_count": 1, 
+				"total": 1
+			}, 
+			"vincent": {
+				"sites": [{"url": "https://vincent.wispbyte.org/", "status": "online", "response_time": 0.4327411651611328, "last_checked": 1762091203.000467}], 
+				"online_count": 1, 
+				"total": 1
+			}
+		};
+
+		// Test the functions
+		console.log("Testing update functions...");
+		updateNetamiTV(testData["netami-tv"]);
+		updateNetamiGames(testData["netami-games"]);
+		updateMod(testData.mod);
+		updateVincent(testData.vincent);
+	</script>
+</body>
+</html>

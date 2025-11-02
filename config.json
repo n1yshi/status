@@ -1,0 +1,24 @@
+{
+    "server": {
+        "port": 9090,
+        "address": "0.0.0.0",
+        "domain": null,
+        "ssl_cert": null,
+        "ssl_key": null,
+        "enable_cors": false
+    },
+    "machine": {
+        "hide_boot_partition": true,
+        "custom_storage": false,
+        "storage": {
+            "OS": "/",
+            "Files": "/home",
+            "Logs": "/var/log"
+        },
+        "enable_storage_blacklist": false,
+        "storage_blacklist": []
+    },
+    "misc": {
+        "debug": false
+    }
+}
